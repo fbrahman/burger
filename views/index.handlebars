@@ -1,13 +1,46 @@
 <h1>Eat-da-Burger!</h1>
 
+<h2> Burgers available to be devoured: </h2>
+
 <ul>
   {{#each burgers}}
+    {{#unless devoured}}
     <li>
-      {{name}}
+      {{burger_name}}
         <form action="/{{id}}?_method=PUT" method="POST">
-          <input type="hidden" name = "eaten" value="true">
+          <input type="hidden" name = "devour" value="true">
           <button type="submit">Eat the burger!</button>
         </form>
       </li>
+      {{/unless}}
     {{/each}}
 </ul>
+
+
+<h2> Devoured burgers: </h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+    <li>
+      {{burger_name}}
+        <form action="/{{id}}?_method=PUT" method="POST">
+          <input type="hidden" name = "devour" value="false">
+          <button type="submit">Eat the burger!</button>
+        </form>
+      </li>
+      {{/if}}
+    {{/each}}
+</ul>
+
+
+<h2> Order a burger </h2>
+<form class="create-update-form" action="/" method="POST">
+  
+  <div class="form-group">
+    <label for="ba"> Burger Name: </label>
+    <input type="text" id="ba" name = "burger_name">
+  </div>
+
+  <button type="submit"> Place Order</button>
+</form>

@@ -9,11 +9,9 @@ router.get('/', function(req, res) {
             burgers: data
         };
         console.log(hbsObject);
-        // res.render("index", hbsObject);
         res.render("index", hbsObject);
     });
 });
-
 
 router.post('/', function(req, res) {
     burger.create([], [],
@@ -22,10 +20,10 @@ router.post('/', function(req, res) {
         });
 });
 
-
 router.put('/:id', function(req, res) {
     let condition = "id = " + req.params.id;
 
+    console.log(req.body);
     console.log('condition', condition);
 
     burger.update({},
@@ -34,6 +32,5 @@ router.put('/:id', function(req, res) {
             res.redirect('/');
         });
 });
-
 
 module.exports = router;

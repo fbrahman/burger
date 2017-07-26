@@ -51,7 +51,8 @@ const orm = {
     },
 
     updateOne: function(table, objColVals, condition, cb) {
-        let query = `SET ?
+        let query = `UPDATE ${table}
+                     SET ?
 					 WHERE ?;`;
 
         let values = [_objToSql(objColVals), condition];
