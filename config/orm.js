@@ -28,7 +28,7 @@ const orm = {
 
     selectAll: function(tableInput, cb) {
         let query = `SELECT *
-					 FROM tableInput;`;
+					 FROM ${tableInput};`;
 
         connection.query(query, function(err, result) {
             if (err) { throw err };
