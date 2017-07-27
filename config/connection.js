@@ -5,8 +5,12 @@ let connection;
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL)
 } else {
-    const keys = require('./keys');
-    connection = mysql.createConnection(keys.sqlConfig);
+    connection = mysql.createConnection({
+    	host: 'localhost',
+    	user: 'root',
+    	password: 'password', 
+    	database: 'burgers_db'
+    });
 };
 
 

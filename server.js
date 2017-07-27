@@ -11,7 +11,7 @@ let app = express();
 
 app.use(express.static("public"));
 
-app.use(bodyParser.urlencoded({ extend:false }));
+app.use(bodyParser.urlencoded({ extended:false }));
 
 app.use(methodOverride("_method"));
 
