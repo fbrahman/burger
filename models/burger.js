@@ -13,7 +13,7 @@ const burger = {
 		})
 	}, 
 
-	update: function(objColVals, condition, cb){
+	update: function(objColsVals, condition, cb){
 		orm.updateOne('burgers_db.burgers', objColsVals, condition, function(res){
 			cb(res);
 		});

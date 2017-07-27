@@ -26,7 +26,7 @@ router.put('/:id', function(req, res) {
     console.log(req.body);
     console.log('condition', condition);
 
-    burger.update({},
+    burger.update({devoured:req.body.devour},
         condition,
         function() {
             res.redirect('/');

@@ -55,7 +55,9 @@ const orm = {
                      SET ?
 					 WHERE ?;`;
 
-        let values = [_objToSql(objColVals), condition];
+        let values = [orm._objToSql(objColVals), condition];
+
+        console.log(query, values);
 
         connection.query(query, values, function(err, results) {
             if (err) { throw err };
