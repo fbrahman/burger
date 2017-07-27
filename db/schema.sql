@@ -1,8 +1,13 @@
-DROP DATABASE IF EXISTS burgers_db;
 
-CREATE DATABASE burgers_db;
+-- for local DB
+-- DROP DATABASE IF EXISTS burgers_db;
 
-USE burgers_db;
+-- CREATE DATABASE burgers_db;
+
+-- USE burgers_db;
+
+-- for JAWS_DB
+-- USE eenzy7hbeuc1e87o;
 
 CREATE TABLE burgers(
 	id int AUTO_INCREMENT NOT NULL
