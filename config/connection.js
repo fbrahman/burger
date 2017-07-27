@@ -1,8 +1,14 @@
 // Set up MySQL connection.
 const mysql = require("mysql");
-const keys = require('./keys')
+const keys = require('./keys');
+let connection;
 
-var connection = mysql.createConnection(keys.sqlConfig);
+if (process.env.JAWSDB_URL){
+	connection = mysql.createConnection(process.env.JAWSDB_URL)
+} else {
+	connection = mysql.createConnection(keys.sqlConfig);
+};
+
 
 // Make connection.
 connection.connect((err) => {
