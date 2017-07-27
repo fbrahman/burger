@@ -2,30 +2,6 @@ const connection = require('./connection.js');
 
 const orm = {
 
-    // Helper function for SQL syntax.
-    _printQuestionMarks: function(num) {
-        var arr = [];
-
-        for (var i = 0; i < num; i++) {
-            arr.push("?");
-        }
-
-        return arr.toString();
-    },
-
-    // Helper function for SQL syntax.
-    _objToSql: function(ob) {
-        var arr = [];
-
-        for (var key in ob) {
-            if (Object.hasOwnProperty.call(ob, key)) {
-                arr.push(key + "=" + ob[key]);
-            }
-        }
-
-        return arr.toString();
-    },
-
     selectAll: function(tableInput, cb) {
         let query = `SELECT *
 					 FROM ${tableInput};`;
@@ -38,9 +14,9 @@ const orm = {
     },
 
     insertOne: function(table, cols, vals, cb) {
-        let query = `INSERT INTO ?? (??)
-					 VALUES (${_printQuestionMarks(vals.length)});`;
-        let values = [table, cols.toString(), vals];
+        let query = `INSERT INTO ${table} (${cols})
+					 VALUES (?);`;
+        let values = [vals];
 
         console.log(query, values);
 
@@ -50,19 +26,19 @@ const orm = {
         })
     },
 
-    updateOne: function(table, objColVals, condition, cb) {
+    updateOne: function(table, eatenBool, burgerID, cb) {
         let query = `UPDATE ${table}
-                     SET ?
-					 WHERE ?;`;
+                     SET devoured = ?
+					 WHERE id = ?;`;
 
-        let values = [orm._objToSql(objColVals), condition];
+        let values = [eval(eatenBool), burgerID];
 
         console.log(query, values);
 
         connection.query(query, values, function(err, results) {
             if (err) { throw err };
 
-            cb(result);
+            cb(results);
         })
     }
 };

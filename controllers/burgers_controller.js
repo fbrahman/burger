@@ -8,27 +8,23 @@ router.get('/', function(req, res) {
         let hbsObject = {
             burgers: data
         };
-        console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });
 
 router.post('/', function(req, res) {
-    burger.create([], [],
-        function() {
+    let burgerName = req.body.burger_name;
+
+    burger.create(burgerName, function() {
             res.redirect('/');
         });
 });
 
 router.put('/:id', function(req, res) {
-    let condition = "id = " + req.params.id;
+    let burgerID = req.params.id;
+    let eatenBool = req.body.devour;
 
-    console.log(req.body);
-    console.log('condition', condition);
-
-    burger.update({devoured:req.body.devour},
-        condition,
-        function() {
+    burger.update(eatenBool, burgerID, function() {
             res.redirect('/');
         });
 });

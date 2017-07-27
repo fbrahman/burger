@@ -7,8 +7,8 @@ const burger = {
 		})
 	},
 
-	create: function (cols, vals, cb){
-		orm.insertOne('burgers_db.burgers', cols, vals, function(res){
+	create: function (vals, cb){
+		orm.insertOne('burgers_db.burgers', 'burger_name', vals, function(res){
 			cb(res);
 		})
 	}, 
