@@ -1,0 +1,82 @@
+body {
+	font-family: 'Pacifico', cursive;
+	background-color: #ed666c;
+	display: grid;
+	grid-template-rows: auto 1fr 1fr 1fr 1fr auto;
+	grid-template-areas:
+		'image'
+		'header'
+		'order'
+		'available'
+		'devoured'
+		'footer';
+	justify-items: center;
+
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.17em;
+}
+
+h4 {
+    font-size: 1.12em;
+}
+
+h5 {
+    font-size: .83em;
+}
+
+h6 {
+    font-size: .75em;
+}
+
+#burger-img{
+	grid-area:image;
+	height: auto;
+	width: 20%;
+}
+
+#header{
+	grid-area:header;
+	color: #603912;
+}
+
+#available{
+	grid-area:available;
+}
+
+#devoured{
+	grid-area:devoured;
+}
+
+#order{
+	grid-area:order;
+}
+
+#footer{
+	grid-area:footer;
+	/*align-self: end;*/
+}
+
+#available-header{
+	color: #8dc73f;
+	padding: 1em;
+}
+
+#devoured-header{
+	color: #f0bc83;
+	padding: 1em;
+}
+
+#order-header{
+	color:#fcf56f;
+	padding: 1em;
+}

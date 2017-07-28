@@ -1,46 +1,58 @@
-<h1>Eat-da-Burger!</h1>
 
-<h2> Burgers available to be devoured: </h2>
+<img src="/assets/img/burger_trans.png" id="burger-img">
+<h1 id="header">Eat-da-Burger!</h1>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-    <li>
-      {{burger_name}}
-        <form action="/{{id}}?_method=PUT" method="POST">
-          <input type="hidden" name = "devour" value="true">
-          <button type="submit">Eat IT!</button>
-        </form>
-      </li>
-      {{/unless}}
-    {{/each}}
-</ul>
+<div id="available">
+  <h2 id="available-header"> Burgers available to be devoured: </h2>
+
+  <ul>
+    {{#each burgers}}
+      {{#unless devoured}}
+      <li>
+        {{burger_name}}
+          <form action="/{{id}}?_method=PUT" method="POST">
+            <input type="hidden" name = "devour" value="true">
+            <button type="submit">Eat IT!</button>
+          </form>
+        </li>
+        {{/unless}}
+      {{/each}}
+  </ul>
+</div>
+
+<div id="devoured">
+  <h2 id="devoured-header"> Devoured burgers: </h2>
+
+  <ul>
+    {{#each burgers}}
+      {{#if devoured}}
+      <li>
+        {{burger_name}}
+          <form action="/{{id}}?_method=PUT" method="POST">
+            <input type="hidden" name = "devour" value="false">
+            <button type="submit">Send it back!</button>
+          </form>
+        </li>
+        {{/if}}
+      {{/each}}
+  </ul>
+</div>
 
 
-<h2> Devoured burgers: </h2>
+<div id="order">
+  <h2 id="order-header"> Order a burger </h2>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-    <li>
-      {{burger_name}}
-        <form action="/{{id}}?_method=PUT" method="POST">
-          <input type="hidden" name = "devour" value="false">
-          <button type="submit">Throw it up!</button>
-        </form>
-      </li>
-      {{/if}}
-    {{/each}}
-</ul>
+  <form class="create-update-form" action="/" method="POST">
+    
+    <div class="form-group">
+      <label for="ba"> Burger Name: </label>
+      <input type="text" id="ba" name = "burger_name">
+    </div>
 
+    <button type="submit"> Place Order</button>
+  </form>
+</div>
 
-<h2> Order a burger </h2>
-<form class="create-update-form" action="/" method="POST">
+<div id="footer">&#169; Copyright 2017 Fahad Rahman</div>
   
-  <div class="form-group">
-    <label for="ba"> Burger Name: </label>
-    <input type="text" id="ba" name = "burger_name">
-  </div>
-
-  <button type="submit"> Place Order</button>
-</form>
+</div>
