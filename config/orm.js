@@ -18,8 +18,6 @@ const orm = {
 					 VALUES (?);`;
         let values = [vals];
 
-        console.log(query, values);
-
         connection.query(query, values, function(err, result) {
             if (err) { throw err };
             cb(result);
@@ -32,8 +30,6 @@ const orm = {
 					 WHERE id = ?;`;
 
         let values = [eval(eatenBool), burgerID];
-
-        console.log(query, values);
 
         connection.query(query, values, function(err, results) {
             if (err) { throw err };

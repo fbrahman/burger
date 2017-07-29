@@ -17,7 +17,7 @@ body {
 	font-family: var(--font);
 	background-color: var(--red);
 	display: grid;
-	grid-template-rows: auto auto 1fr 1fr 1fr auto;
+	grid-template-rows: auto auto auto auto auto auto;
 	grid-template-columns: 1fr;
 	grid-template-areas:
 		'image'
@@ -27,6 +27,7 @@ body {
 		'devoured'
 		'footer';
 	justify-items: center;
+	align-items: center;
 	color: var(--brown);
 	font-size: 1em;
 	white-space: nowrap;
@@ -52,9 +53,6 @@ body {
 
 #devoured{
 	grid-area:devoured;
-	border-color: yellow;
-	border-style: solid;
-	border-width: 1px;
 }
 
 #order{
@@ -66,6 +64,7 @@ body {
 	grid-area:footer;
 	padding: 0 0 .5em 0;
 	font-size: .75em;
+	align-self: end;
 }
 
 #order-header,
@@ -89,12 +88,33 @@ body {
 	padding: 1em;
 }
 
+ul {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	grid-template-columns: auto auto auto;
+	grid-template-rows:auto;
+	grid-gap: 1.5em;
+}
+
+li{
+	font-size: 2em;
+}
+
+li button{
+	font-size: .4em;
+}
+
 form{
 	font-size: 2em;
 }
 
 button{
-	background-color: var(--red) 
+	background-color: var(--red);
+	font-family: var(--font);
+	border: 5px solid;
+	border-radius: .5em; 
+	margin: 0 0 .5em 0;
 }
 
 #order form {
@@ -102,26 +122,12 @@ button{
 	justify-content: center;
 }
 
-#order button {
-	border: 1px solid var(--yellow);
-	color: var(--yellow);
-	margin: 0 0 0 1em;
-	font-family: var(--font);
-	font-size: 1.25em;
-	border-radius: .5em;
-
-}
-
-#order button:hover {
-	
-}
-
 #ba{
 	font-family:'Helvetica', sans-serif;
 	font-size: 1em; 
-	color: #603912;
+	color: var(--yellow);
 	border: none;
-	border-bottom: 1px solid var(--yellow);
+	border-bottom: 1px solid var(--brown);
 	background-color: var(--red);
 	padding: .25em;
 
@@ -133,4 +139,37 @@ button{
     background-color: rgba(252,245,111,.3);
 }
 
+#order button {
+	border-color: var(--yellow);
+	color: var(--yellow);
+	margin: 0 0 0 1em;
+	font-size: 1em;
+
+}
+
+#order button:hover {
+	background-color: var(--yellow);
+	color: var(--red);
+}
+
+#available button {
+	border-color: var(--green);
+	color:var(--green);
+}
+
+#available button:hover{
+	background-color: var(--green);
+	color: var(--red);
+}
+
+
+#devoured button {
+	border-color: var(--tan);
+	color: var(--tan);
+}
+
+#devoured button:hover {
+	background-color: var(--tan);
+	color: var(--red);
+}
 
