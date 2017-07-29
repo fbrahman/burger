@@ -1,175 +1,196 @@
-:root{
-	--brown: #603912;
-	--yellow: #fcf56f;
-	--green: #8dc73f;
-	--tan: #f0bc83;
-	--red: #ed666c;
-	--font:'Pacifico', cursive;
+:root {
+    --brown: #603912;
+    --yellow: #fcf56f;
+    --green: #8dc73f;
+    --tan: #f0bc83;
+    --red: #ed666c;
+    --font: 'Pacifico', cursive;
 }
 
-html{
-	height: 100vh;
+html {
+    height: 100vh;
 }
+
 
 /*Setting up grid*/
+
 body {
-	min-height: 100vh;
-	font-family: var(--font);
-	background-color: var(--red);
-	display: grid;
-	grid-template-rows: auto auto auto auto auto auto;
-	grid-template-columns: 1fr;
-	grid-template-areas:
-		'image'
-		'header'
-		'order'
-		'available'
-		'devoured'
-		'footer';
-	justify-items: center;
-	align-items: center;
-	color: var(--brown);
-	font-size: 1em;
-	white-space: nowrap;
-	text-align: center;
+    min-height: 100vh;
+    font-family: var(--font);
+    background-color: var(--red);
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    	'image' 
+    	'header' 
+    	'order' 
+    	'available' 
+    	'devoured' 
+    	'footer';
+    justify-items: center;
+    align-items: center;
+    color: var(--brown);
+    font-size: 1em;
+    white-space: nowrap;
+    text-align: center;
 }
+
+
 /*Defining grid areas*/
-#burger-img{
-	grid-area:image;
-	height: auto;
-	width: 35%;
-	padding: 2em 0 2em 0;
+
+#burger-img {
+    grid-area: image;
+    height: auto;
+    width: 35%;
+    padding: 2em 0 2em 0;
 }
 
-#header{
-	grid-area:header;
-	color: var(--brown);
-	font-size: 5em;
+#header {
+    grid-area: header;
+    color: var(--brown);
+    font-size: 5em;
 }
 
-#available{
-	grid-area:available;
+#available {
+    grid-area: available;
 }
 
-#devoured{
-	grid-area:devoured;
+#devoured {
+    grid-area: devoured;
 }
 
-#order{
-	grid-area:order;
-	align-self: center;
+#order {
+    grid-area: order;
+    align-self: center;
 }
 
-#footer{
-	grid-area:footer;
-	padding: 0 0 .5em 0;
-	font-size: .75em;
-	align-self: end;
+#footer {
+    grid-area: footer;
+    padding: 0 0 .5em 0;
+    font-size: .75em;
+    align-self: end;
 }
 
 #order-header,
-#available-header, 
-#devoured-header{
-	font-size: 3.5em;
+#available-header,
+#devoured-header {
+    font-size: 3.5em;
 }
 
-#available-header{
-	color: var(--green);
-	padding: 1em;
+#available-header {
+    color: var(--green);
+    padding: 1em;
 }
 
-#devoured-header{
-	color: var(--tan);
-	padding: 1em;
+#devoured-header {
+    color: var(--tan);
+    padding: 1em;
 }
 
-#order-header{
-	color:var(--yellow);
-	padding: 1em;
+#order-header {
+    color: var(--yellow);
+    padding: 1em;
 }
 
 ul {
-	display: grid;
-	justify-content: center;
-	align-content: center;
-	grid-template-columns: auto auto auto;
-	grid-template-rows:auto;
-	grid-gap: 1.5em;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    grid-gap: 1.5em;
 }
 
-li{
-	font-size: 2em;
+li {
+    font-size: 2em;
 }
 
-li button{
-	font-size: .4em;
+li button {
+    font-size: .4em;
 }
 
-form{
-	font-size: 2em;
+form {
+    font-size: 2em;
 }
 
-button{
-	background-color: var(--red);
-	font-family: var(--font);
-	border: 5px solid;
-	border-radius: .5em; 
-	margin: 0 0 .5em 0;
+button {
+    background-color: var(--red);
+    font-family: var(--font);
+    border: 5px solid;
+    border-radius: .5em;
+    margin: 0 0 .5em 0;
 }
 
 #order form {
-	display: flex;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
-#ba{
-	font-family:'Helvetica', sans-serif;
-	font-size: 1em; 
-	color: var(--yellow);
-	border: none;
-	border-bottom: 1px solid var(--brown);
-	background-color: var(--red);
-	padding: .25em;
-
+#ba {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1em;
+    color: var(--yellow);
+    border: none;
+    border-bottom: 1px solid var(--brown);
+    background-color: var(--red);
+    padding: .25em;
 }
 
 #ba:focus {
-	outline: none;
+    outline: none;
     border-bottom: 3px solid var(--yellow);
-    background-color: rgba(252,245,111,.3);
+    background-color: rgba(252, 245, 111, .3);
 }
 
 #order button {
-	border-color: var(--yellow);
-	color: var(--yellow);
-	margin: 0 0 0 1em;
-	font-size: 1em;
-
+    border-color: var(--yellow);
+    color: var(--yellow);
+    margin: 0 0 0 1em;
+    font-size: 1em;
 }
 
 #order button:hover {
-	background-color: var(--yellow);
-	color: var(--red);
+    background-color: var(--yellow);
+    color: var(--red);
 }
 
 #available button {
-	border-color: var(--green);
-	color:var(--green);
+    border-color: var(--green);
+    color: var(--green);
 }
 
-#available button:hover{
-	background-color: var(--green);
-	color: var(--red);
+#available button:hover {
+    background-color: var(--green);
+    color: var(--red);
 }
 
 
 #devoured button {
-	border-color: var(--tan);
-	color: var(--tan);
+    border-color: var(--tan);
+    color: var(--tan);
 }
 
 #devoured button:hover {
-	background-color: var(--tan);
-	color: var(--red);
+    background-color: var(--tan);
+    color: var(--red);
 }
 
+@media only screen and (min-width: 1024px) {
+
+    #burger-img {
+        width: 10%;
+    }
+
+    body{
+		align-items: start;
+		grid-template-rows: auto auto auto 1fr auto;
+		grid-template-columns:1fr 1fr;
+		grid-template-areas: 
+			'image image' 
+			'header header' 
+			'order order' 
+			'available devoured'  
+			'footer footer';
+    }
+}
