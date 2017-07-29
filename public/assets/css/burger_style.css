@@ -1,10 +1,21 @@
+:root{
+	--brown: #603912;
+	--yellow: #fcf56f;
+	--green: #8dc73f;
+	--tan: #f0bc83;
+	--red: #ed666c;
+	--font:'Pacifico', cursive;
+}
+
 html{
 	height: 100vh;
 }
+
+/*Setting up grid*/
 body {
 	min-height: 100vh;
-	font-family: 'Pacifico', cursive;
-	background-color: #ed666c;
+	font-family: var(--font);
+	background-color: var(--red);
 	display: grid;
 	grid-template-rows: auto auto 1fr 1fr 1fr auto;
 	grid-template-columns: 1fr;
@@ -16,44 +27,23 @@ body {
 		'devoured'
 		'footer';
 	justify-items: center;
-	color: #603912;
-
+	color: var(--brown);
+	font-size: 1em;
+	white-space: nowrap;
+	text-align: center;
 }
-
-h1 {
-    font-size: 2em;
-}
-
-h2 {
-    font-size: 1.5em;
-}
-
-h3 {
-    font-size: 1.17em;
-}
-
-h4 {
-    font-size: 1.12em;
-}
-
-h5 {
-    font-size: .83em;
-}
-
-h6 {
-    font-size: .75em;
-}
-
+/*Defining grid areas*/
 #burger-img{
 	grid-area:image;
 	height: auto;
-	width: 40%;
-	padding: 1em;
+	width: 35%;
+	padding: 2em 0 2em 0;
 }
 
 #header{
 	grid-area:header;
-	color: #603912;
+	color: var(--brown);
+	font-size: 5em;
 }
 
 #available{
@@ -65,29 +55,82 @@ h6 {
 	border-color: yellow;
 	border-style: solid;
 	border-width: 1px;
-	
 }
 
 #order{
 	grid-area:order;
+	align-self: center;
 }
 
 #footer{
 	grid-area:footer;
-/* 	align-self: end; */
+	padding: 0 0 .5em 0;
+	font-size: .75em;
+}
+
+#order-header,
+#available-header, 
+#devoured-header{
+	font-size: 3.5em;
 }
 
 #available-header{
-	color: #8dc73f;
+	color: var(--green);
 	padding: 1em;
 }
 
 #devoured-header{
-	color: #f0bc83;
+	color: var(--tan);
 	padding: 1em;
 }
 
 #order-header{
-	color:#fcf56f;
+	color:var(--yellow);
 	padding: 1em;
 }
+
+form{
+	font-size: 2em;
+}
+
+button{
+	background-color: var(--red) 
+}
+
+#order form {
+	display: flex;
+	justify-content: center;
+}
+
+#order button {
+	border: 1px solid var(--yellow);
+	color: var(--yellow);
+	margin: 0 0 0 1em;
+	font-family: var(--font);
+	font-size: 1.25em;
+	border-radius: .5em;
+
+}
+
+#order button:hover {
+	
+}
+
+#ba{
+	font-family:'Helvetica', sans-serif;
+	font-size: 1em; 
+	color: #603912;
+	border: none;
+	border-bottom: 1px solid var(--yellow);
+	background-color: var(--red);
+	padding: .25em;
+
+}
+
+#ba:focus {
+	outline: none;
+    border-bottom: 3px solid var(--yellow);
+    background-color: rgba(252,245,111,.3);
+}
+
+
