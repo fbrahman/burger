@@ -39,6 +39,4 @@ const orm = {
     }
 };
 
-module.exports= {selectAll: orm.selectAll, 
-				 updateOne: orm.updateOne,
-				 insertOne: orm.insertOne};
+module.exports= orm;
